@@ -1,0 +1,8 @@
+h,masterId,branchId,branchName
+d,1,1,Chengdu
+d,1,2,Chongqing
+d,2,1,Shanghai
+d,2,2,Beijing
+d,2,3,Guangzhou
+d,2,4,Shenzheng
+d,3,1,Other
