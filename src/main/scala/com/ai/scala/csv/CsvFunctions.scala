@@ -23,10 +23,12 @@ object CsvFunctions {
       * @return
       */
     private[CsvImplicit] def map2String(any: Any)(implicit delimiter: String): String = {
-      if (any.isInstanceOf[String]) csvString(any.asInstanceOf[String])
-      else if (any == None || any == null) {
+      if (any == None || any == null) {
         ""
-      } else {
+      }
+      else if (any.isInstanceOf[String])
+        csvString(any.asInstanceOf[String])
+      else {
         any.toString
       }
     }
