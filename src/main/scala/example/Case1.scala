@@ -16,6 +16,8 @@ import org.apache.spark.sql.SparkSession
   */
 object Case1 extends App with Logging {
 
+  import com.ai.scala.csv.CsvFunctions._
+
   // refer resources/spark_case1.csv
   val input = args.apply(0).toString
 
@@ -40,16 +42,9 @@ object Case1 extends App with Logging {
       branchName = s"${o1.branchName}||${o2.branchName}")
   })
     //map to csv
-    .map(t2 => Case1Functions.toCsv(t2._2))
+    .map(t2 => t2._2.csv)
     .saveAsTextFile(output)
 
 }
-
-object Case1Functions {
-
-  def toCsv(myobj: MyObject): String = s"${myobj.rowType},${myobj.masterId},${myobj.branchId},${myobj.branchName}"
-
-}
-
 
 case class MyObject(rowType: String, masterId: String, branchId: String, branchName: String)
