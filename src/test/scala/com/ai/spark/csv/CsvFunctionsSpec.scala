@@ -1,4 +1,4 @@
-package com.ai.scala.csv
+package com.ai.spark.csv
 
 import org.scalatest._
 
@@ -32,7 +32,6 @@ class CsvFunctionsSpec extends FlatSpec with Matchers {
   "A CsvImplicit" should "convert a People with name null to empty " in {
     People(1, null, 32, "A Java Scala Developer").csv should be("1,,32,A Java Scala Developer")
   }
-
 
 }
 

@@ -1,7 +1,7 @@
-package com.ai.scala.csv
+package com.ai.spark.csv
 
 /**
-  * Common CSV functions
+  * Common CSV functions, convert a case class to csv str
   */
 object CsvFunctions {
 

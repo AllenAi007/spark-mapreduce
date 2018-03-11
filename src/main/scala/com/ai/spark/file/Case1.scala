@@ -1,4 +1,4 @@
-package example
+package com.ai.spark.file
 
 import org.apache.spark.internal.Logging
 import org.apache.spark.sql.SparkSession
@@ -9,14 +9,13 @@ import org.apache.spark.sql.SparkSession
   * how to run.
   *
   * cd spark_home
-  * ./bin/spark-submit --master local[2] --class example.Case1 /Users/aihua/work/spark-mapreduce/target/scala-2.11/spark-mapreduce_2.11-0.1.0-SNAPSHOT.jar /Users/aihua/work/spark-mapreduce/src/test/resources/spark_case1.csv
-  * ./bin/spark-submit --master local[2] --class example.Case1 /Users/aihua/work/spark-mapreduce/target/scala-2.11/spark-mapreduce_2.11-0.1.0-SNAPSHOT.jar /Users/aihua/work/spark-mapreduce/src/test/resources/spark_case2.csv
-  *
+  * ./bin/spark-submit --master local[2] --class com.ai.spark.file.Case1 /Users/aihua/work/spark-mapreduce/target/scala-2.11/spark-mapreduce_2.11-0.1.0-SNAPSHOT.jar /Users/aihua/work/spark-mapreduce/src/test/resources/spark_case1.csv
+  * ./bin/spark-submit --master local[2] --class com.ai.spark.file.Case1 /Users/aihua/work/spark-mapreduce/target/scala-2.11/spark-mapreduce_2.11-0.1.0-SNAPSHOT.jar /Users/aihua/work/spark-mapreduce/src/test/resources/spark_case2.csv
   *
   */
 object Case1 extends App with Logging {
 
-  import com.ai.scala.csv.CsvFunctions._
+  import com.ai.spark.csv.CsvFunctions._
 
   // refer resources/spark_case1.csv
   val input = args.apply(0).toString
